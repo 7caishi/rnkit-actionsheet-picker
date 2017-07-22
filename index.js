@@ -11,5 +11,6 @@
 
 import DatePicker from './lib/datePicker';
 import DataPicker from './lib/dataPicker';
+import DataDoublePicker from './lib/dataDoublePicker';
 
-export { DataPicker, DatePicker };
+export { DataPicker, DatePicker, DataDoublePicker };

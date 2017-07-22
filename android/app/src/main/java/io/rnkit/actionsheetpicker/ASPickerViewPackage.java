@@ -18,7 +18,11 @@ public class ASPickerViewPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new ASDatePickerViewModule(reactContext), new ASDataPickerViewModule(reactContext));
+        return Arrays.<NativeModule>asList(
+            new ASDatePickerViewModule(reactContext),
+            new ASDataPickerViewModule(reactContext),
+            new ASDataDoublePickerViewModule(reactContext)
+        );
     }
 
     @Override
