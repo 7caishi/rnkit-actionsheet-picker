@@ -118,7 +118,7 @@ public class ASDataDoublePickerViewModule extends ReactContextBaseJavaModule imp
                             case 2:
                                 //FIX CODE
                                 //selectedData.pushString(options2Items.get(selectOptions1).get(selectOptions2));
-                                selectedData.pushString(options1Items.get(selectOptions2).getName());
+                                selectedData.pushString(optionsRightItems.get(selectOptions2).getName());
                                 selectedIndex.pushInt(selectOptions2);
                             case 1:
                                 selectedData.pushString(options1Items.get(selectOptions1).getName());
