@@ -42,6 +42,7 @@ public class ASDataDoublePickerViewModule extends ReactContextBaseJavaModule imp
     private static Boolean isCallBack = false;
 
     private ArrayList<ProvinceBean> options1Items = new ArrayList<>();
+    private ArrayList<ProvinceBean> optionsRightItems = new ArrayList<>();
     private ArrayList<ProvinceBean> optionsNullItems = new ArrayList<>();
     private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
     private ArrayList<ArrayList<ArrayList<IPickerViewData>>> options3Items = new ArrayList<>();
@@ -188,6 +189,7 @@ public class ASDataDoublePickerViewModule extends ReactContextBaseJavaModule imp
     private void setPickerDataSource(ReadableArray dataSource, OptionsPickerView pvOptions) {
         options2Items.clear();
         options1Items.clear();
+        optionsRightItems.clear();
         options3Items.clear();
 
 
@@ -203,7 +205,10 @@ public class ASDataDoublePickerViewModule extends ReactContextBaseJavaModule imp
                     if (v.equals(optionStr2)) {
                            option2 = i;
                     }
-                    options1Items.add(new ProvinceBean(i, v, v, v));
+                    if(v.equals("不限") == false){
+                        options1Items.add(new ProvinceBean(i, v, v, v));
+                    }
+                    optionsRightItems.add(new ProvinceBean(i, v, v, v));
                 } else if (type.equals("Map")) {
 
                     ReadableMap map = dataSource.getMap(i);
@@ -299,7 +304,7 @@ public class ASDataDoublePickerViewModule extends ReactContextBaseJavaModule imp
                 pvOptions.setPicker(options1Items);
                 break;
             case 2:
-                pvOptions.setNPicker(options1Items, options1Items, null);
+                pvOptions.setNPicker(options1Items, optionsRightItems, null);
                 break;
             case 3:
                 pvOptions.setPicker(options1Items, options2Items, options3Items);
